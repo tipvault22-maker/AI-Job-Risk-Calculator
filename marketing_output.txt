@@ -1,0 +1,157 @@
+<<<CSV>>>
+Handle,Title,Body (HTML),Vendor,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Image Src,Variant Requires Shipping
+ai-job-resilience-blueprint,AI Job Resilience Blueprint,"<p>Future-proof your career with our AI Job Resilience Blueprint—a comprehensive toolkit that shows you how to adapt, upskill, and thrive in the age of automation.</p>",TipVault22,"career-planning, fast-ship, future-proof, jackpot, best-seller",TRUE,Style,Digital Guide,AIJRB-001,0,shopify,999,continue,manual,79.99,119.99,https://tipvault22.com/ai-job-resilience-blueprint.jpg,FALSE
+<<<HTML>>>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AI Job Resilience Blueprint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<section class="hero">
+<h1>Stay Ahead of AI Disruption</h1>
+<p>Unlock the AI Job Resilience Blueprint and master the strategies top professionals use to safeguard their careers.</p>
+<ul>
+<li><strong>Diagnose your career risks</strong> with our proprietary AI-readiness audit.</li>
+<li><strong>Gain in-demand skills</strong> through curated learning paths and micro-challenges.</li>
+<li><strong>Implement a 90-day plan</strong> that keeps you relevant, confident, and indispensable.</li>
+</ul>
+<a href="#buy" class="cta-button">Get Instant Access</a>
+</section>
+<section class="testimonials">
+<h2>Loved by Professionals Worldwide</h2>
+<blockquote>
+<p>“In just two weeks I landed a promotion thanks to the upskilling roadmap.”</p>
+<cite>— Priya, Product Manager</cite>
+</blockquote>
+<blockquote>
+<p>“The toolkit made AI less intimidating and helped my team automate smartly.”</p>
+<cite>— Marco, Operations Lead</cite>
+</blockquote>
+<blockquote>
+<p>“I finally feel confident about my career path instead of fearing layoffs.”</p>
+<cite>— Lauren, Data Analyst</cite>
+</blockquote>
+</section>
+<section class="details">
+<h2>What’s Inside</h2>
+<p>Instantly download frameworks, templates, and personalized action steps that guide you from uncertainty to opportunity. Every module is battle-tested with real corporate teams and solo consultants.</p>
+</section>
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3>How fast will I see results?</h3>
+<p>Most customers report meaningful clarity and new action steps within the first 7 days of working through the blueprint.</p>
+</div>
+<div class="faq-item">
+<h3>Is this only for tech professionals?</h3>
+<p>No—our frameworks are tailored for marketing, operations, HR, finance, and other knowledge-driven roles that interact with AI.</p>
+</div>
+<div class="faq-item">
+<h3>Do I need prior AI experience?</h3>
+<p>Not at all. The blueprint explains everything in plain language and includes recommended tools for beginners.</p>
+</div>
+</section>
+<section class="guarantee">
+<h2>Risk-Free 30-Day Guarantee</h2>
+<p>Try the AI Job Resilience Blueprint for a full month. If you’re not thrilled with the clarity and confidence you gain, email us for a prompt refund—no questions asked.</p>
+</section>
+<section id="buy" class="purchase">
+<h2>Secure Your Blueprint Today</h2>
+<p>Join thousands of future-proof professionals and get lifetime updates.</p>
+<button type="button">Buy Now — $79</button>
+</section>
+</body>
+</html>
+<<<ADS>>>
+Concept 1
+Hook Line: Outsmart Automation Today
+Captions:
+- Short: Protect your role from AI risk.
+- Medium: Get the exact playbook that keeps high performers indispensable even as automation ramps up.
+- Long: AI is reshaping every industry—learn the precise skills, scripts, and systems to stay invaluable so you lead change instead of fearing layoffs.
+Headlines:
+1. Your AI Resilience Plan Awaits
+2. Master AI-Proof Career Moves
+3. Secure Your Future in 90 Days
+CTA: Download Your Blueprint Now
+UGC Script (20s):
+0-3s: Close-up selfie—“I kept hearing AI might replace my job.”
+3-8s: Screen recording flipping through the blueprint—“So I grabbed this AI Job Resilience Blueprint.”
+8-14s: Shot of calendar with highlighted upskilling sessions—“It gave me a week-by-week plan and micro challenges.”
+14-20s: Smiling at laptop with email congratulating—“Two weeks later, my boss noticed. Feeling secure and ready for the future.”
+
+Concept 2
+Hook Line: Future-Proof Fast
+Captions:
+- Short: Unlock your AI-proof roadmap.
+- Medium: Discover the checklist leaders use to stay relevant and get promoted as AI rolls out.
+- Long: While coworkers worry about automation, you’ll implement targeted skills, smart prompts, and workflows that make you the go-to expert.
+Headlines:
+1. Stay Relevant in the AI Era
+2. Crush Your 90-Day Career Plan
+3. From Uncertain to Unstoppable
+CTA: Start Your Career Upgrade
+UGC Script (20s):
+0-4s: POV walking into office—“Our company just announced new AI tools.”
+4-9s: Cut to notebook + blueprint pages—“I used the blueprint to audit my role.”
+9-14s: Clip of online course completion—“It pointed me to the exact courses and prompts to master.”
+14-20s: On-camera grin—“Now my team asks me for help. Best $79 I’ve spent.”
+
+Concept 3
+Hook Line: Career Confidence Boost
+Captions:
+- Short: Beat AI anxiety now.
+- Medium: Tap into expert frameworks that help consultants and managers stay indispensable.
+- Long: Don’t let automation catch you off guard—this blueprint walks you through risk assessment, strategic upskilling, and leadership positioning.
+Headlines:
+1. Turn AI Fear into Action
+2. Lead the Change, Don’t Chase It
+3. Your AI Career Safety Net
+CTA: Claim the Blueprint
+UGC Script (20s):
+0-3s: At-home workspace—“AI news had me stressed.”
+3-7s: Zoomed-in shot of tablet with blueprint—“Downloaded the AI Job Resilience Blueprint.”
+7-13s: Montage of implementing prompts and templates—“It breaks everything down into manageable wins.”
+13-20s: High-five with coworker—“Now I’m leading the automation project. Zero fear.”
+<<<EMAILS>>>
+Email 1 (Day 0)
+Subject: Your AI Job Resilience Blueprint is ready
+Preview: Instant access details inside
+Body: Hey there! Your download link and bonuses are locked in—check your inbox for the AI Job Resilience Blueprint and start the career audit today. You’ve just taken the smartest step toward future-proofing your role.
+CTA: Access your blueprint now
+
+Email 2 (Day 2)
+Subject: Show us your progress + 10% off your next upgrade
+Preview: Share a quick clip and save today
+Body: Loving the blueprint so far? Record a short video or snap a photo using it and tag us—when you do, we’ll send 10% off our Career Clarity Sprint upgrade. Your story inspires others to take action too!
+CTA: Submit your UGC & unlock 10%
+
+Email 3 (Day 5)
+Subject: Pros like you are securing promotions
+Preview: See how the blueprint pays off
+Body: Professionals across tech, marketing, and ops are landing raises after implementing the AI Job Resilience Blueprint. Pair it with our Interview Power Prompts mini-kit and turn insights into your next big move.
+CTA: Add the Interview Power Prompts
+
+Email 4 (Day 10)
+Subject: Last call—bundle savings end tonight
+Preview: Secure the future-ready toolkit
+Body: Tonight is the final chance to grab the Resilience Bundle—our blueprint plus the Career Clarity Sprint—for 25% off. When the timer hits zero, the bundle returns to full price.
+CTA: Get the bundle before it’s gone
+
+Email 5 (Day 21)
+Subject: Ready to re-engage? Here’s 15% off
+Preview: Your blueprint updates are waiting
+Body: We’ve added fresh automation playbooks and AI prompt libraries to your dashboard. Reactivate today with code WINBACK15 and regain momentum toward your career goals.
+CTA: Redeem WINBACK15 now
+<<<IMAGE_PROMPTS>>>
+1. Hero Product Shot: Ultra-sharp DSLR capture of a sleek digital tablet displaying the AI Job Resilience Blueprint dashboard, staged on a modern glass desk with soft window light, subtle depth of field, professional tone.
+2. UGC Vertical: Smartphone portrait video still of a young professional smiling while holding printed blueprint pages in a cozy home office, warm ambient lighting, candid vibe.
+3. Flat-Lay Carousel: Top-down mirrorless camera shot of the blueprint printouts, laptop, coffee, and sticky notes arranged neatly on a wooden desk, bright natural morning light, ready-to-work aesthetic.
+<<<AUTOMATION_SPEC>>>
+Input Fields: supplier CSV provides product title, description, price, SKU, weight, inventory quantity, image URL.
+Mapping: title→Shopify Title, description→Body HTML, price→Variant Price, SKU→Variant SKU, weight→Variant Grams, quantity→Variant Inventory Qty, image URL→Image Src.
+Steps: import CSV into data pipeline, validate required fields, format tags and vendor, generate handle from title, upload via Shopify Admin API (Product Create), verify response and store product ID.
+Conditional Logic: if inventory = 0, trigger alternate supplier lookup or mark product as out-of-stock before pushing update to Shopify.

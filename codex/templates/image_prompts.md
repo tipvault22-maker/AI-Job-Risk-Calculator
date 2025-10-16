@@ -1,0 +1,3 @@
+- Hero (landscape): studio/cinematic light, shallow DOF
+- UGC vertical 9:16: person using product, natural light
+- Flat-lay: product + accessories, top-down, soft shadows

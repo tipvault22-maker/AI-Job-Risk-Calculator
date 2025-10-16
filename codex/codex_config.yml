@@ -1,0 +1,43 @@
+version: 1
+name: Codex Prime
+description: Review and fix product + marketing packs before they hit Shopify/Discord.
+
+monitors:
+  - paths:
+      - "products/**"
+      - "marketing/**"
+      - "data/**"
+      - "**/*.csv"
+      - "**/*.txt"
+      - "**/*.md"
+    checks:
+      - id: title-format
+        description: Title ≤ 72 chars, no brand/IP names (Disney, NFL, Apple, Nike, etc.), no ™/®.
+      - id: margin-min
+        description: Require Variant Price >= Cost * 2.5 and price ends with .99 or .95.
+      - id: shipping-flag-digital
+        description: If item is digital (file/template/guide) then set Variant Grams=0 and Variant Requires Shipping=FALSE.
+      - id: shipping-flag-physical
+        description: If item is physical then Variant Grams ≤ 1500 and Variant Requires Shipping=TRUE.
+      - id: compare-at
+        description: Variant Compare At Price = round(Variant Price * 1.5, 2).
+      - id: inventory-policy
+        description: Variant Inventory Tracker=shopify, Variant Inventory Qty >= 999, Variant Inventory Policy=continue (dropship).
+      - id: image-url
+        description: Image Src must be https URL and non-empty.
+      - id: tags
+        description: Include tags: {category}, fast-ship, jackpot, weekly OR best-seller when applicable.
+      - id: html-body
+        description: Body (HTML) must include 3 bold bullets, 3 short testimonials, FAQ(3), 30-day guarantee.
+      - id: ip-filter
+        description: Block medical/weapon claims and trademarked terms in Title/Body/Tags.
+
+labels:
+  approved: "ready-for-zap"
+  changes_requested: "needs-fix"
+
+actions:
+  on_approved:
+    - comment: "✅ Passed Codex Prime. Label added: ready-for-zap. Safe to publish."
+  on_changes_requested:
+    - comment: "⚠️ Needs fixes. See inline notes (pricing/shipping/tags/body)."
