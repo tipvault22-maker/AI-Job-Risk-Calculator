@@ -1,0 +1,58 @@
+<<<CSV>>>
+Handle,Title,Body (HTML),Vendor,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Image Src
+turbomag-wireless-car-charger,TurboMag Wireless Car Charger,"<h2>Dominate Every Damn Drive</h2><p>The TurboMag Wireless Car Charger slams 15W fast charge into your phone while locking it down with a savage MagSafe-style grip. Built for commuters and rideshare drivers who refuse to drop signal or battery.</p><ul><li><strong>15W fast charge</strong> melts dead-battery anxiety in minutes.</li><li><strong>Auto-clamping one-hand mount</strong> snaps on so quick you barely lift a finger.</li><li><strong>MagSafe-style hold, ultra-stable</strong> keeps navigation glued even when the road turns to chaos.</li></ul><p>Ships from the US warehouse in 2–7 business days with a 30-day money-back promise.</p>",TipVault22,"phone-accessories,fast-ship,15W fast charge,Auto-clamping one-hand mount,MagSafe-style hold,jackpot",TRUE,Color,Matte Black,TM-15W-US,500,shopify,999,continue,manual,39.99,,https://images.tipvault22.com/turbomag-hero.jpg
+<<<HTML>>>
+<section>
+  <h1>TurboMag Wireless Car Charger</h1>
+  <p>Commuters and rideshare killers, this is the charger that keeps your hustle loud, fast, and fully juiced.</p>
+  <ul>
+    <li><strong>15W fast charge</strong> nukes low-battery panic before it starts.</li>
+    <li><strong>Auto-clamping one-hand mount</strong> locks in with a savage click and frees your focus.</li>
+    <li><strong>MagSafe-style hold, ultra-stable</strong> laughs at potholes, curbs, and late-night chaos.</li>
+  </ul>
+  <h2>What the crew is yelling</h2>
+  <div class="testimonials">
+    <blockquote>
+      <p>“Zero cord fumbling now. TurboMag clamps my phone so tight the passengers actually notice.”</p>
+      <cite>— Jordan, Uber Beast</cite>
+    </blockquote>
+    <blockquote>
+      <p>“That 15W hit keeps my phone at 100% even when I’m grinding 12-hour shifts.”</p>
+      <cite>— Casey, Commute Warrior</cite>
+    </blockquote>
+    <blockquote>
+      <p>“I’ve hammered this charger over speed bumps all week and it hasn’t budged once.”</p>
+      <cite>— Lex, Night-Shift Sniper</cite>
+    </blockquote>
+  </div>
+  <h2>FAQ</h2>
+  <dl>
+    <dt>Does it work with thick cases?</dt>
+    <dd>If it’s MagSafe-ready, hell yes. Need help? We toss in a magnetic ring for non-MagSafe setups.</dd>
+    <dt>What mount options are in the box?</dt>
+    <dd>Vent clip plus 3M dash mount, both built to take a beating without slipping.</dd>
+    <dt>How fast is shipping?</dt>
+    <dd>US warehouse to your door in 2–7 business days, because waiting sucks.</dd>
+  </dl>
+  <h2>Brutal Guarantee</h2>
+  <p>Run TurboMag for 30 days. If it doesn’t make every ride sharper and safer, send it back for a full refund—no bullshit.</p>
+</section>
+<<<ADS>>>
+Concept 1: "Snap. Clamp. Full Charge." | Captions: "Dead battery? Not on my shift." / "TurboMag clamps harder than traffic jams hit." / "15W fury, one-hand mount, zero excuses." | Headlines: "Lock In and Floor It" / "15W Power for Road Warriors" / "Auto-Clamp Beast for Your Dash" | CTA: "Smash the Buy Button"
+Concept 2: "Grip That Survives Chaos." | Captions: "Potholes? TurboMag laughs." / "Night routes stay bright AF." / "Stable grip, savage charge, happy riders." | Headlines: "Own the Late Shift" / "Steady Screen, Savage Charge" / "MagSafe Hold That Won't Quit" | CTA: "Charge Harder"
+Concept 3: "Five-Star Ride Energy." | Captions: "Passengers tip more when they see this setup." / "Clean dash, fast charge, zero BS." / "From dead phone to hero mode fast." | Headlines: "Upgrade Your Ride Experience" / "Commuter Flex, Rideshare Ready" / "The Charger Riders Notice" | CTA: "Flex on Every Ride"
+UGC Script (20s): Shot 1 (0-4s): Driver slams door, POV to vent-mounted TurboMag, voiceover: "I was sick of weak chargers." Shot 2 (4-8s): One-hand snap-on, auto clamp clicks—close-up. "TurboMag grabs my phone like a vice." Shot 3 (8-12s): Gauge cluster shows navigation glowing, overlay "15W FAST AS HELL." Shot 4 (12-16s): Bumpy street footage, phone steady. "Even this trash road can’t shake it." Shot 5 (16-20s): Driver looks at camera, fist bump. "If you drive for real, get TurboMag and stop messing around."
+<<<EMAILS>>>
+Email 1 | Subject: Your TurboMag order is locked and loaded | Preview: Hell yeah—15W power is on the way | Body: You just claimed the TurboMag Wireless Car Charger and we’re packing it up from the US warehouse right now. Expect tracking inside 24 hours and 2–7 day delivery, so your rides stay charged and savage. | CTA: Track My TurboMag
+Email 2 | Subject: Show us the snap + grab 10% off | Preview: Drop a video, score a deal | Body: We want to see that one-hand clamp in action—send a quick clip or tag us and we’ll drop a 10% code for your next TurboMag or accessory. Hustle harder and get rewarded. | CTA: Submit My TurboMag Clip
+Email 3 | Subject: Riders won’t shut up about this grip | Preview: Proof TurboMag is the real deal | Body: Drivers are flexing five-star reviews after swapping in TurboMag, and the same magnetic fury pairs perfectly with our dual-port car adapter. Stack them and own the road. | CTA: Grab the Turbo Bundle
+Email 4 | Subject: Bundle up before stock gets wrecked | Preview: Scarcity alert—bundle price goes soon | Body: Inventory is flying, and when 999 units hit zero we’re jacking the price. Lock the TurboMag + dash mount bundle now and milk every shift for more tips. | CTA: Secure My Bundle
+Email 5 | Subject: Last shot—25% win-back on TurboMag | Preview: Fire up the charge again today | Body: Been a minute since we saw you—here’s a filthy 25% code to bring TurboMag back into your ride and keep that dashboard lethal. Use it before it ghosts in 48 hours. | CTA: Reactivate My Charge
+<<<IMAGE_PROMPTS>>>
+1. Hero Shot — "Mirrorless DSLR, 50mm lens, cinematic side lighting on matte-black TurboMag Wireless Car Charger gripping a phone with glowing navigation inside a performance car cockpit, shallow depth of field, crisp reflections, aggressive vibe"
+2. UGC Vertical — "Smartphone vertical video frame, natural golden-hour light, rideshare driver POV snapping phone onto TurboMag vent mount, city skyline blur outside window, raw handheld energy, authentic grain"
+3. Flat-Lay Carousel — "Top-down flat lay, softbox overhead, textured asphalt mat backdrop, TurboMag charger, USB-C cable, vent and dash mounts arranged in diagonal layout, bold shadows, high-contrast product photography"
+<<<AUTOMATION_SPEC>>>
+Inputs Required: supplier CSV fields {title, sku, price, cost, inventory_qty, image_url, description_html}.
+Shopify Mapping: title → Title, description_html → Body (HTML), sku → Variant SKU, price → Variant Price, cost → Cost per item, inventory_qty → Variant Inventory Qty, image_url → Image Src, default option label → Option1 Name/Value.
+Workflow Steps: (1) Ingest supplier CSV via HTTP node. (2) Transform fields to Shopify import schema and append static tags (phone-accessories, fast-ship, jackpot, USP keywords). (3) Set Variant Grams to 500 and Inventory Policy to continue. (4) Push CSV row to Shopify via Admin API or file upload. Conditional: If inventory_qty = 0, branch to (a) notify sourcing team to swap supplier, (b) set product status draft and append "Out of Stock" tag before sync.
