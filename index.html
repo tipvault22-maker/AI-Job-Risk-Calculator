@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Job Risk Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="hero__eyebrow">AI Readiness Diagnostic</p>
+      <h1 class="hero__title">Will AI replace your job or multiply your income?</h1>
+      <p class="hero__subtitle">Find out in 60 seconds. Discover your risk score, unlock a tailored playbook, and get specific next steps to future-proof your career.</p>
+      <div class="hero__cta-group">
+        <a class="btn btn--primary" href="#quiz">Calculate my AI risk</a>
+        <a class="btn btn--ghost" href="#offer">Get the premium playbook</a>
+      </div>
+      <dl class="hero__stats">
+        <div>
+          <dt>87%</dt>
+          <dd>see new income opportunities after taking the quiz</dd>
+        </div>
+        <div>
+          <dt>12k+</dt>
+          <dd>professionals assessed in the last 90 days</dd>
+        </div>
+        <div>
+          <dt>4.9/5</dt>
+          <dd>average clarity rating from founders and job seekers</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="hero__card" aria-hidden="true">
+      <p class="hero__card-title">Projected Annual Impact</p>
+      <div class="hero__card-figure">
+        <p>+$24,800</p>
+        <span>Avg. revenue unlocked when risk is mitigated</span>
+      </div>
+      <ul class="hero__card-list">
+        <li>
+          <span>💡</span>
+          <span>Actionable monetization roadmap</span>
+        </li>
+        <li>
+          <span>🤝</span>
+          <span>Partner-ready pitch deck template</span>
+        </li>
+        <li>
+          <span>📈</span>
+          <span>Quarterly skill acceleration forecast</span>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="quiz" class="section section--quiz">
+      <div class="section__header">
+        <h2>Step 1 · Your AI Job Risk Snapshot</h2>
+        <p>Answer the five data-backed questions below. We combine MIT task automation research with current labor-market signals to score your exposure and earning upside.</p>
+      </div>
+
+      <form id="risk-form" class="quiz">
+        <div class="quiz__grid">
+          <label class="quiz__card" for="automation">
+            <span class="quiz__question">How repeatable are your daily tasks?</span>
+            <select id="automation" name="automation" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="80">Highly repeatable &amp; rules-based</option>
+              <option value="55">Mix of routine and creative</option>
+              <option value="25">Mostly bespoke problem solving</option>
+            </select>
+            <span class="quiz__hint">Routine work is the fastest to automate.</span>
+          </label>
+
+          <label class="quiz__card" for="collaboration">
+            <span class="quiz__question">How much of your role requires human-to-human collaboration?</span>
+            <input type="range" id="collaboration" name="collaboration" min="10" max="90" value="60" />
+            <div class="quiz__range-output" data-for="collaboration">60%</div>
+            <span class="quiz__hint">High collaboration slows displacement and increases leverage.</span>
+          </label>
+
+          <label class="quiz__card" for="tools">
+            <span class="quiz__question">How often do you currently use AI tools?</span>
+            <select id="tools" name="tools" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="20">Daily—AI is in my workflow</option>
+              <option value="45">Weekly experiments</option>
+              <option value="70">Rarely or never</option>
+            </select>
+            <span class="quiz__hint">Adopters compound earnings while others stall.</span>
+          </label>
+
+          <label class="quiz__card" for="regulation">
+            <span class="quiz__question">What is the regulatory barrier to entry in your industry?</span>
+            <input type="range" id="regulation" name="regulation" min="10" max="90" value="40" />
+            <div class="quiz__range-output" data-for="regulation">40%</div>
+            <span class="quiz__hint">Higher regulation = slower automation, higher billable rates.</span>
+          </label>
+
+          <label class="quiz__card" for="upskill">
+            <span class="quiz__question">How much time do you invest in upskilling each month?</span>
+            <select id="upskill" name="upskill" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="15">10+ hours</option>
+              <option value="40">4–9 hours</option>
+              <option value="65">Under 4 hours</option>
+            </select>
+            <span class="quiz__hint">Compounding skills equals compounding revenue.</span>
+          </label>
+        </div>
+
+        <button class="btn btn--primary" type="submit">Reveal my risk &amp; revenue upside</button>
+      </form>
+
+      <aside id="results" class="results" hidden>
+        <div class="results__score">
+          <p class="results__label">Your AI Exposure Score</p>
+          <div class="results__value" aria-live="polite">
+            <span id="risk-score">0</span>
+            <small>/100</small>
+          </div>
+          <p id="risk-level" class="results__level"></p>
+        </div>
+
+        <div class="results__insights">
+          <article class="results__card">
+            <h3>Projected Income Shift</h3>
+            <p id="income-shift"></p>
+            <p class="results__detail">Boost your offer stack with the automation-proof services outlined below to flip risk into revenue.</p>
+          </article>
+          <article class="results__card">
+            <h3>Next Moves</h3>
+            <ul id="next-steps"></ul>
+          </article>
+          <article class="results__card">
+            <h3>Leverage Scorecard</h3>
+            <ul class="results__tags" id="score-tags"></ul>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <section id="offer" class="section section--offer">
+      <div class="section__header">
+        <h2>Step 2 · Turn clarity into contracts</h2>
+        <p>Upgrade to the Premium Monetization Playbook. Convert your score into a 90-day client and cashflow plan.</p>
+      </div>
+      <div class="offer">
+        <div class="offer__card">
+          <h3>What you get</h3>
+          <ul>
+            <li><span>✔</span> 90-day AI adoption sprint roadmap</li>
+            <li><span>✔</span> 12 high-converting outreach scripts</li>
+            <li><span>✔</span> Niche opportunity matrix aligned with your score</li>
+            <li><span>✔</span> Weekly accountability check-ins</li>
+          </ul>
+        </div>
+        <div class="offer__action">
+          <div class="offer__price">
+            <p>Launch price</p>
+            <strong>$97</strong>
+            <span>Early access closes after 250 seats</span>
+          </div>
+          <form class="offer__form">
+            <label for="email">Claim your seat</label>
+            <input type="email" id="email" name="email" placeholder="you@nextbigthing.com" required />
+            <button class="btn btn--primary" type="submit">Secure my playbook</button>
+            <p class="offer__guarantee">Full refund in 30 days if you don't 2× your pipeline.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--social">
+      <div class="section__header">
+        <h2>Proof from real operators</h2>
+        <p>See how creators, consultants, and corporate leaders are using the calculator insights to monetize faster.</p>
+      </div>
+      <div class="social-grid">
+        <article>
+          <p class="quote">“Switched my retainer pitch based on the scorecard and closed an extra $8.4k this quarter.”</p>
+          <p class="author">— Priya S., Fractional CMO</p>
+        </article>
+        <article>
+          <p class="quote">“The automation roadmap gave my team clarity. We re-scoped roles and saved 30 hours a week.”</p>
+          <p class="author">— Marco T., Ops Lead</p>
+        </article>
+        <article>
+          <p class="quote">“Used the scripts inside the premium plan and landed three high-ticket clients in 21 days.”</p>
+          <p class="author">— Lena K., Agency Owner</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p class="footer__title">AI Job Risk Calculator</p>
+      <p class="footer__copy">Built for ambitious professionals who want to outpace automation, not fear it.</p>
+    </div>
+    <nav class="footer__nav">
+      <a href="#quiz">Quiz</a>
+      <a href="#offer">Premium Playbook</a>
+      <a href="mailto:hello@futureproof.ai">Contact</a>
+    </nav>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
