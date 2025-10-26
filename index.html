@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Job Risk Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Future-proof your career</p>
+        <h1>Will AI replace your job?</h1>
+        <p class="lede">
+          Answer five quick questions to reveal your automation exposure, the
+          biggest risk factors, and where upskilling can keep you in control.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <form id="risk-form" class="quiz" novalidate>
+          <h2>Tell us about your role</h2>
+          <div class="question">
+            <label for="industry">Industry</label>
+            <p class="help">
+              Different sectors are automating at different speeds. Choose the
+              closest match to your work today.
+            </p>
+            <select id="industry" required>
+              <option value="" disabled selected>Select your industry</option>
+              <option value="technology">Technology & Software</option>
+              <option value="manufacturing">Manufacturing & Logistics</option>
+              <option value="finance">Finance & Banking</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="education">Education</option>
+              <option value="creative">Creative & Media</option>
+              <option value="retail">Retail & E-commerce</option>
+              <option value="hospitality">Hospitality & Travel</option>
+              <option value="public">Government & Public Service</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div class="question">
+            <label for="task-automation">How repetitive are your core tasks?</label>
+            <p class="help">
+              Jobs with heavy routine work are easier to automate. Rate from
+              mostly creative (1) to highly repetitive (10).
+            </p>
+            <div class="slider">
+              <input
+                type="range"
+                id="task-automation"
+                min="1"
+                max="10"
+                step="1"
+                value="5"
+              />
+              <div class="slider__labels">
+                <span>Creative</span>
+                <span>Repetitive</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="question">
+            <label for="ai-adoption">How quickly is your company adopting AI?</label>
+            <p class="help">
+              Fast adopters create more immediate displacement risk, but also
+              more upskilling opportunities.
+            </p>
+            <div class="options">
+              <label>
+                <input type="radio" name="ai-adoption" value="cautious" />
+                Cautious
+              </label>
+              <label>
+                <input type="radio" name="ai-adoption" value="moderate" checked />
+                Experimenting
+              </label>
+              <label>
+                <input type="radio" name="ai-adoption" value="aggressive" />
+                All-in on AI
+              </label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label for="human-touch">
+              How important are human or interpersonal skills in your role?
+            </label>
+            <p class="help">
+              Empathy, negotiation, and leadership lower automation exposure.
+            </p>
+            <div class="options options--pill">
+              <label class="pill-option">
+                <input type="radio" name="human-touch" value="low" />
+                <span>Low</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="human-touch" value="medium" checked />
+                <span>Medium</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="human-touch" value="high" />
+                <span>High</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="question">
+            <label for="experience">Years of experience in this field</label>
+            <p class="help">
+              Domain knowledge and tenure can soften disruption by making you a
+              go-to expert.
+            </p>
+            <input
+              type="number"
+              id="experience"
+              min="0"
+              max="40"
+              value="5"
+              inputmode="numeric"
+            />
+          </div>
+
+          <button type="submit" class="cta">Calculate my risk</button>
+        </form>
+      </section>
+
+      <section id="results" class="panel results hidden" aria-live="polite">
+        <div class="results__summary">
+          <h2>Your automation outlook</h2>
+          <p class="score" id="score-value">0%</p>
+          <div class="meter" role="presentation">
+            <div class="meter__fill" id="risk-meter-fill"></div>
+          </div>
+          <p class="risk-level" id="risk-level"></p>
+          <p class="risk-message" id="risk-message"></p>
+        </div>
+
+        <div class="results__insights">
+          <div class="insight">
+            <h3>Why it matters</h3>
+            <ul id="insight-list"></ul>
+          </div>
+          <div class="insight">
+            <h3>Your next moves</h3>
+            <ul id="action-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        This tool is a directional guide, not a guarantee. Pair the insights
+        with conversations in your company and industry.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
