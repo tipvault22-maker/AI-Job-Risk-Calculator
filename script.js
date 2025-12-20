@@ -6,6 +6,8 @@ const incomeEl = document.getElementById("income-shift");
 const nextStepsEl = document.getElementById("next-steps");
 const tagsEl = document.getElementById("score-tags");
 const offerForm = document.querySelector(".offer__form");
+const copyButton = document.getElementById("copy-summary");
+const sharePreview = document.getElementById("share-preview");
 
 function showToast(message) {
   let toast = document.querySelector(".toast");
@@ -85,6 +87,12 @@ function buildTags(score) {
   return ["Low Automation Risk", "Scale Partnerships", "Launch Premium Offers"];
 }
 
+function buildShareText(score) {
+  const level = describeLevel(score);
+  const { label } = formatIncomeChange(score);
+  return `Just ran the AI Job Risk Calculator: scored ${score}/100. ${level} ${label} What'd you get?`;
+}
+
 function calculateScore(data) {
   const automation = Number(data.get("automation"));
   const collaboration = 100 - Number(data.get("collaboration"));
@@ -112,6 +120,7 @@ function renderResults(score) {
   const { label, color } = formatIncomeChange(score);
   const steps = buildSteps(score);
   const tags = buildTags(score);
+  const shareText = buildShareText(score);
 
   scoreEl.textContent = score;
   levelEl.textContent = describeLevel(score);
@@ -123,6 +132,14 @@ function renderResults(score) {
   nextStepsEl.innerHTML = steps.map((step) => `<li>${step}</li>`).join("");
 
   tagsEl.innerHTML = tags.map((tag) => `<li>${tag}</li>`).join("");
+
+  if (sharePreview) {
+    sharePreview.textContent = shareText;
+  }
+
+  if (copyButton) {
+    copyButton.dataset.summary = shareText;
+  }
 
   results.hidden = false;
   results.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -143,5 +160,26 @@ offerForm?.addEventListener("submit", (event) => {
   if (typeof email === "string" && email.trim()) {
     showToast("Seat reserved! Check your inbox for onboarding instructions.");
     offerForm.reset();
+  }
+});
+
+copyButton?.addEventListener("click", async () => {
+  const summary = copyButton.dataset.summary;
+  if (!summary) {
+    showToast("Run the quiz first to generate your shareable blurb.");
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(summary);
+    showToast("Copied! Post it to invite replies about your score.");
+  } catch (error) {
+    const fallbackArea = document.createElement("textarea");
+    fallbackArea.value = summary;
+    document.body.appendChild(fallbackArea);
+    fallbackArea.select();
+    document.execCommand("copy");
+    fallbackArea.remove();
+    showToast("Copied! Post it to invite replies about your score.");
   }
 });
