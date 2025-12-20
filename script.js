@@ -6,8 +6,16 @@ const incomeEl = document.getElementById("income-shift");
 const nextStepsEl = document.getElementById("next-steps");
 const tagsEl = document.getElementById("score-tags");
 const offerForm = document.querySelector(".offer__form");
-const copyButton = document.getElementById("copy-summary");
-const sharePreview = document.getElementById("share-preview");
+const shareHeadline = document.getElementById("share-headline");
+const shareSubline = document.getElementById("share-subline");
+const shareScore = document.getElementById("share-score");
+const shareAngle = document.getElementById("share-angle");
+const shareX = document.getElementById("share-x");
+const shareReddit = document.getElementById("share-reddit");
+const shareTikTok = document.getElementById("share-tiktok");
+const copyButtons = document.querySelectorAll("[data-copy-platform]");
+const shareLogCount = document.getElementById("share-log-count");
+const shareEvents = JSON.parse(localStorage.getItem("shareEvents") || "[]");
 
 function showToast(message) {
   let toast = document.querySelector(".toast");
@@ -87,10 +95,44 @@ function buildTags(score) {
   return ["Low Automation Risk", "Scale Partnerships", "Launch Premium Offers"];
 }
 
-function buildShareText(score) {
-  const level = describeLevel(score);
-  const { label } = formatIncomeChange(score);
-  return `Just ran the AI Job Risk Calculator: scored ${score}/100. ${level} ${label} What'd you get?`;
+function getArchetype(score) {
+  if (score >= 70) {
+    return {
+      name: "Signal Defense Operator",
+      insight: "You spot where automation steals margin and pivot fast.",
+      angle: "Lead with de-risking plays before AI cuts into revenue.",
+      hook: "Seeing how fast AI can undercut a role is wild—here's my pivot.",
+    };
+  }
+
+  if (score >= 40) {
+    return {
+      name: "Opportunity Splitter",
+      insight: "You balance automation with human trust loops for leverage.",
+      angle: "Blend AI delivery with collaboration to expand retainers.",
+      hook: "Turns out the sweet spot is part human, part automation.",
+    };
+  }
+
+  return {
+    name: "Compound Leverage Builder",
+    insight: "You trade low-risk tasks for high-signal strategy and partnerships.",
+    angle: "Double down on productized offers while AI handles grunt work.",
+    hook: "Feels like the perfect lane to build defensible IP with AI as a cofounder.",
+  };
+}
+
+function buildShareContent(score) {
+  const archetype = getArchetype(score);
+  const referral = "Took this free quiz → https://tipvault22.com/ai-job-risk";
+
+  const blurbs = {
+    x: `My Side-Hustle Archetype is ${archetype.name} (${score}/100). ${archetype.hook} ${referral}`,
+    reddit: `I just ran my role through an AI job risk check and landed as a "${archetype.name}" (score ${score}/100). It highlighted that ${archetype.insight} Curious what others score. ${referral}`,
+    tiktok: `AI graded me a "${archetype.name}" 🤔 Score ${score}/100. ${archetype.hook} What lane are you in? ${referral}`,
+  };
+
+  return { archetype, blurbs };
 }
 
 function calculateScore(data) {
@@ -120,7 +162,7 @@ function renderResults(score) {
   const { label, color } = formatIncomeChange(score);
   const steps = buildSteps(score);
   const tags = buildTags(score);
-  const shareText = buildShareText(score);
+  const { archetype, blurbs } = buildShareContent(score);
 
   scoreEl.textContent = score;
   levelEl.textContent = describeLevel(score);
@@ -133,16 +175,58 @@ function renderResults(score) {
 
   tagsEl.innerHTML = tags.map((tag) => `<li>${tag}</li>`).join("");
 
-  if (sharePreview) {
-    sharePreview.textContent = shareText;
+  if (shareHeadline && shareSubline && shareScore && shareAngle) {
+    shareHeadline.textContent = `My Side-Hustle Archetype Is ${archetype.name}`;
+    shareSubline.textContent = archetype.insight;
+    shareScore.textContent = score;
+    shareAngle.textContent = archetype.angle;
   }
 
-  if (copyButton) {
-    copyButton.dataset.summary = shareText;
+  if (shareX && shareReddit && shareTikTok) {
+    shareX.textContent = blurbs.x;
+    shareReddit.textContent = blurbs.reddit;
+    shareTikTok.textContent = blurbs.tiktok;
   }
+
+  copyButtons.forEach((button) => {
+    const platform = button.dataset.copyPlatform;
+    const text = blurbs[platform];
+    if (text) {
+      button.dataset.copyText = text;
+    }
+  });
 
   results.hidden = false;
   results.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function renderShareLog() {
+  if (!shareLogCount) return;
+  const total = shareEvents.length;
+  shareLogCount.textContent = `${total} share${total === 1 ? "" : "s"} tracked.`;
+}
+
+async function copyShareText(platform, text) {
+  if (!text) {
+    showToast("Run the quiz first to generate your shareable blurbs.");
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (error) {
+    const fallbackArea = document.createElement("textarea");
+    fallbackArea.value = text;
+    document.body.appendChild(fallbackArea);
+    fallbackArea.select();
+    document.execCommand("copy");
+    fallbackArea.remove();
+  }
+
+  shareEvents.push({ platform, text, timestamp: new Date().toISOString() });
+  localStorage.setItem("shareEvents", JSON.stringify(shareEvents));
+  renderShareLog();
+  showToast("Copied! Paste it and spark replies.");
 }
 
 form?.addEventListener("submit", (event) => {
@@ -163,23 +247,12 @@ offerForm?.addEventListener("submit", (event) => {
   }
 });
 
-copyButton?.addEventListener("click", async () => {
-  const summary = copyButton.dataset.summary;
-  if (!summary) {
-    showToast("Run the quiz first to generate your shareable blurb.");
-    return;
-  }
+renderShareLog();
 
-  try {
-    await navigator.clipboard.writeText(summary);
-    showToast("Copied! Post it to invite replies about your score.");
-  } catch (error) {
-    const fallbackArea = document.createElement("textarea");
-    fallbackArea.value = summary;
-    document.body.appendChild(fallbackArea);
-    fallbackArea.select();
-    document.execCommand("copy");
-    fallbackArea.remove();
-    showToast("Copied! Post it to invite replies about your score.");
-  }
+copyButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const platform = button.dataset.copyPlatform;
+    const text = button.dataset.copyText;
+    copyShareText(platform, text);
+  });
 });

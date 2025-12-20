@@ -127,6 +127,55 @@
           <p id="risk-level" class="results__level"></p>
         </div>
 
+        <article class="results__card results__share" aria-live="polite">
+          <div class="share__header">
+            <div>
+              <p class="share__eyebrow">Share-worthy snapshot</p>
+              <h3>Turn your score into replies</h3>
+              <p class="results__detail">One-tap blurbs built for each platform. Default to share so you collect referrals fast.</p>
+            </div>
+            <div class="share__brand">tipvault22.com</div>
+          </div>
+
+          <div class="share__snapshot" id="share-snapshot">
+            <p id="share-headline" class="share__headline">My Side-Hustle Archetype Is Loading...</p>
+            <p id="share-subline" class="share__subline">Run the quiz to see your angle and revenue edge.</p>
+            <div class="share__meta">
+              <span><strong>AI Exposure</strong>: <span id="share-score">0</span>/100</span>
+              <span id="share-angle">Adaptive play waiting...</span>
+              <span class="share__tag">TipVault22</span>
+            </div>
+          </div>
+
+          <div class="share__blurbs" role="list">
+            <div class="share__blurb" role="listitem">
+              <div class="share__blurb-heading">
+                <p class="share__platform">X / Twitter</p>
+                <button id="copy-x" class="btn btn--ghost btn--copy" type="button" data-copy-platform="x">Copy for X</button>
+              </div>
+              <p id="share-x" class="share__text">Complete the quiz to auto-write your X post.</p>
+            </div>
+            <div class="share__blurb" role="listitem">
+              <div class="share__blurb-heading">
+                <p class="share__platform">Reddit</p>
+                <button id="copy-reddit" class="btn btn--ghost btn--copy" type="button" data-copy-platform="reddit">Copy for Reddit</button>
+              </div>
+              <p id="share-reddit" class="share__text">Run your score to get a reflective, non-promotional blurb.</p>
+            </div>
+            <div class="share__blurb" role="listitem">
+              <div class="share__blurb-heading">
+                <p class="share__platform">TikTok / Reels</p>
+                <button id="copy-tiktok" class="btn btn--ghost btn--copy" type="button" data-copy-platform="tiktok">Copy caption</button>
+              </div>
+              <p id="share-tiktok" class="share__text">Your hooky caption appears after you calculate your risk.</p>
+            </div>
+          </div>
+
+          <p class="share__footnote">
+            Shares log locally so you can see what resonated. <span id="share-log-count">0 shares tracked.</span>
+          </p>
+        </article>
+
         <div class="results__insights">
           <article class="results__card">
             <h3>Projected Income Shift</h3>
@@ -142,17 +191,6 @@
             <ul class="results__tags" id="score-tags"></ul>
           </article>
         </div>
-
-        <article class="results__card results__share">
-          <div>
-            <h3>Share your snapshot</h3>
-            <p class="results__detail">Copy a ready-to-post blurb to spark replies and collect leads.</p>
-          </div>
-          <p id="share-preview" class="results__share-preview">Complete the quiz to generate your blurb.</p>
-          <button id="copy-summary" class="btn btn--primary results__share-btn" type="button">
-            Copy my AI readiness blurb
-          </button>
-        </article>
       </aside>
     </section>
 
