@@ -5,6 +5,7 @@ const levelEl = document.getElementById("risk-level");
 const incomeEl = document.getElementById("income-shift");
 const nextStepsEl = document.getElementById("next-steps");
 const tagsEl = document.getElementById("score-tags");
+const breakdownEl = document.getElementById("score-breakdown");
 const offerForm = document.querySelector(".offer__form");
 const copyButton = document.getElementById("copy-summary");
 const sharePreview = document.getElementById("share-preview");
@@ -94,16 +95,69 @@ function buildShareText(score) {
 }
 
 function calculateScore(data) {
-  const automation = Number(data.get("automation"));
-  const collaboration = 100 - Number(data.get("collaboration"));
-  const tools = Number(data.get("tools"));
-  const regulation = 100 - Number(data.get("regulation"));
-  const upskill = Number(data.get("upskill"));
+  const automation = Number(data.get("automation")) || 0;
+  const collaborationRaw = Number(data.get("collaboration")) || 0;
+  const collaboration = 100 - collaborationRaw;
+  const tools = Number(data.get("tools")) || 0;
+  const regulationRaw = Number(data.get("regulation")) || 0;
+  const regulation = 100 - regulationRaw;
+  const upskill = Number(data.get("upskill")) || 0;
 
-  const weightedScore =
-    automation * 0.28 + collaboration * 0.16 + tools * 0.22 + regulation * 0.18 + upskill * 0.16;
+  const weights = {
+    automation: 0.28,
+    collaboration: 0.16,
+    tools: 0.22,
+    regulation: 0.18,
+    upskill: 0.16,
+  };
 
-  return Math.round(Math.min(Math.max(weightedScore, 0), 100));
+  const inputs = {
+    automation,
+    collaboration,
+    tools,
+    regulation,
+    upskill,
+  };
+
+  const factorDetails = {
+    automation: {
+      label: "Task repeatability",
+      detail: `${automation}% of your day is repeatable or rules-based.`,
+    },
+    collaboration: {
+      label: "Human collaboration",
+      detail: `${collaborationRaw}% of your work depends on human interaction.`,
+    },
+    tools: {
+      label: "AI tool adoption",
+      detail: tools === 70 ? "You rarely use AI tools today." : "You are experimenting with AI regularly.",
+    },
+    regulation: {
+      label: "Industry regulation",
+      detail: `${regulationRaw}% regulatory buffer slows automation in your field.`,
+    },
+    upskill: {
+      label: "Upskilling cadence",
+      detail: upskill === 65 ? "Under 4 hours a month invested in new skills." : "Consistent learning time logged each month.",
+    },
+  };
+
+  const breakdown = Object.entries(inputs).map(([key, value]) => {
+    const weight = weights[key];
+    return {
+      label: factorDetails[key].label,
+      detail: factorDetails[key].detail,
+      weight,
+      contribution: Math.round(value * weight * 10) / 10,
+    };
+  });
+
+  const weightedScore = breakdown.reduce((total, item) => total + item.contribution, 0);
+
+  return {
+    score: Math.round(Math.min(Math.max(weightedScore, 0), 100)),
+    breakdown,
+  };
 }
 
 function describeLevel(score) {
@@ -116,7 +170,7 @@ function describeLevel(score) {
   return "Low Exposure — you're well-positioned to capitalize on AI-driven opportunities.";
 }
 
-function renderResults(score) {
+function renderResults(score, breakdown) {
   const { label, color } = formatIncomeChange(score);
   const steps = buildSteps(score);
   const tags = buildTags(score);
@@ -141,6 +195,30 @@ function renderResults(score) {
     copyButton.dataset.summary = shareText;
   }
 
+  if (breakdownEl && Array.isArray(breakdown)) {
+    breakdownEl.innerHTML = breakdown
+      .map(
+        (item) => `
+        <li class="breakdown__item">
+          <div class="breakdown__row">
+            <div>
+              <p class="breakdown__label">${item.label}</p>
+              <p class="breakdown__detail">${item.detail}</p>
+            </div>
+            <div class="breakdown__meta">
+              <span class="breakdown__weight">${Math.round(item.weight * 100)}% weight</span>
+              <span class="breakdown__score">+${item.contribution}</span>
+            </div>
+          </div>
+          <div class="breakdown__bar" role="presentation">
+            <span style="width: ${item.contribution}%;"></span>
+          </div>
+        </li>
+      `
+      )
+      .join("");
+  }
+
   results.hidden = false;
   results.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -148,8 +226,8 @@ function renderResults(score) {
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  const score = calculateScore(formData);
-  renderResults(score);
+  const { score, breakdown } = calculateScore(formData);
+  renderResults(score, breakdown);
 });
 
 updateRangeOutputs();
